@@ -1,0 +1,89 @@
+@use "../modules/mixins" as mxs;
+
+.article,
+.articleIsOpen {
+   width: max(460px, 36%);
+   padding: var(--my-unit-max) var(--my-unit-max) 0px;
+   background-color: var(--my-color-white);
+   border-radius: calc(var(--my-unit-min) * 13);
+
+
+   .extendable,
+   .extendableIsOpen {
+      @include mxs.rowFlex(space-between, center);
+      padding-bottom: calc(var(--my-unit-mid) + 5px);
+      transition: margin 500ms linear;
+
+      &.extendableIsOpen {
+         border-bottom: 1px solid var(--my-color-greyDark);
+         margin-bottom: 15px;
+      }
+
+
+
+      div {
+         @include mxs.rowFlex(start, center, 10px);
+
+         svg {
+            width: 24px;
+            height: 24px;
+            color: var(--smart-color-yellow);
+         }
+
+         h3 {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--my-color-greyDark);
+
+            strong {
+               color: var(--my-color-black);
+            }
+         }
+
+      }
+
+      .extendButton,
+      .extendButtonIsOpen {
+         background-color: transparent;
+         padding: 3px;
+         border: none;
+         transition: transform 400ms linear;
+         transform: rotateX(0deg);
+         cursor: pointer;
+
+         &.extendButtonIsOpen {
+            transform: rotateX(180deg);
+         }
+
+         svg {
+            color: var(--my-color-black);
+         }
+
+         svg,
+         path {
+            user-select: none;
+            pointer-events: none;
+         }
+      }
+
+
+   }
+
+   .description,
+   .descriptionIsOpen {
+      opacity: 0%;
+      max-height: 0px;
+      overflow-y: hidden;
+      transition: opacity 500ms linear, max-height 500ms linear;
+
+
+      &.descriptionIsOpen {
+         padding-bottom: var(--my-unit-max);
+         color: var(--my-color-greyDark);
+         letter-spacing: 1px;
+         font-size: 15px;
+         opacity: 100%;
+         max-height: 300px;
+      }
+   }
+}

@@ -1,0 +1,20 @@
+:root {
+    // colors
+    --my-color-main: rgb(245, 245, 245);
+    --my-color-black: rgb(50, 50, 50);
+    --my-color-white: rgb(252, 252, 252);
+    --my-color-greyDark: rgb(130, 130, 130);
+    --my-color-greyLight: rgb(210, 210, 210);
+    --smart-color-yellow: rgb(243, 176, 27);
+    // units
+    --my-unit-min: 2px;
+    --my-unit-mid: 10px;
+    --my-unit-max: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}

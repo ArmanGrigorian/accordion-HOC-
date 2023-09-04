@@ -1,0 +1,7 @@
+@use "../../components/modules/mixins" as mxs;
+
+.withAccordion{
+   @include mxs.colFlex(start, center, 10px);
+   min-height: 100vh;
+   background-color: var(--my-color-main);
+}
